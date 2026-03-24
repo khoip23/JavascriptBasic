@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post" class="form" id="form-1">
+            <div class="form-group">
+                <label for="fullname" class="form-label"> Full Name</label>
+                <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Eg: Phạm Hồng Khôi"
+                    aria-describedby="helpId" autocomplete="name" />
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label"> Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Eg: khoipham@gmail.com"
+                    aria-describedby="helpId" autocomplete="email" />
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label"> Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password"
+                    autocomplete="new-password" aria-describedby="helpId" />
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="rePassword" class="form-label"> Re-enter password</label>
+                <input type="password" name="rePassword" id="rePassword" class="form-control"
+                    placeholder="Re-enter password" autocomplete="new-password" aria-describedby="helpId" />
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="province" class="form-label">Tỉnh thành phố</label>
+                <select id="province" name="province" class="form-control">
+                    <option value="">-- Select your city --</option>
+                    <option value="hni">-- Hà Nội --</option>
+                    <option value="hpg">-- Hải Phòng --</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Gender</label>
+                <div class="form-check">
+                    <input type="radio" name="gender" id="male" value="male" />
+                    <label for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="gender" id="female" value="female" />
+                    <label for="female">Female</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="gender" id="other" value="other" />
+                    <label for="other">Other</label>
+                </div>
+                <span class="form-message"></span>
+            </div>
+            <button class="register">Register</button>
+        </form>
+    </div>
+
+    <script src="./validator.js"></script>
+
+    <script>
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isPassword('#password'),
+                Validator.isRequired('#rePassword'),
+                Validator.isRequired('#province'),
+                Validator.isRequired('input[name="gender"]'),
+                // cũng có thể sử dụng lại isRequired
+                Validator.isConfirmed('#rePassword', function () {
+                    return document.querySelector('#form-1 #password').value
+                }, 'Password does not match'),
+                
+            ],
+            onSubmit: function (data) {
+                //call api here
+                console.log(data)
+            }
+        });
+    </script>
+</body>
+
+</html>
