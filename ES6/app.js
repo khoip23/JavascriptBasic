@@ -99,13 +99,31 @@ console.log(parentName)
 var {name, price, ...rest} = courseDEV1
 console.log(rest)
 
-function DisplayInfo(...params) {
+function DisplayInfo(a, ...params) {
     console.log(params)
 }
 
 DisplayInfo(1,2,3,4,5,6)
 
+function DisplayInfo1({name, description, ...rest}) {
+    console.log(rest)
+}
+
+DisplayInfo1({
+    name: 'javascript',
+    price: 1000,
+    description: 'dev dev dev',
+})
+
+function DisplayInfo2([a, ...rest]) {
+    console.log(rest)
+}
+
+DisplayInfo2([1, 2, 3])
+
 // Spread
+
+
 // Enhanced object literals
 
 
