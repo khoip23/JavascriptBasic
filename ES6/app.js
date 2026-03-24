@@ -122,8 +122,47 @@ function DisplayInfo2([a, ...rest]) {
 DisplayInfo2([1, 2, 3])
 
 // Spread
+var arrayCourse1 = ['Java', 'PHP', 'Ruby']
+var arrayCourse2 = ['JavaCore', 'PHPCore', 'RubyCore']
+
+var arrayCourse3 = [...arrayCourse2, ...arrayCourse1]
+console.log(arrayCourse3)
+
+var obj1 = {
+    name: 'Javascript'
+}
+var obj2 = {
+    price: 1000
+}
+var obj3 = {
+    ...obj1,
+    ...obj2,
+}
+console.log(obj3)
+
+var defaultConfig = {
+    api: 'https:...',
+    apiVersion: 'v1',
+    other: 'orther',
+}
+
+var exerciseConfig = {
+    ...defaultConfig,
+    api: 'https:exer...',
+}
+
+console.log(exerciseConfig)
 
 
+var arrCourse = ['JS', 'JAVA', 'C#']
+function ShowCourse(...rest) {
+    for(var i = 0; i < rest.length; i++)
+    {
+        console.log(rest[i])
+    }
+}
+
+ShowCourse(...arrCourse)
 // Enhanced object literals
 
 
