@@ -57,7 +57,54 @@ function logger2(log = 'giá trị mặc định') {
 
 logger2(undefined);
 // Destructuring
+var array = ['JS', 'PHP', 'RUBY']
+for(var i = 0; i < array.length; i++)
+{
+    console.log(array[i])
+}
+
+//cách sử dụng destructuring
+var arr = ['react', 'express', 'node']
+var [a, b, c] = arr;
+console.log(arr)
+
+var courseDEV = {
+    name: 'Javascript',
+    price: 1000,
+    image: 'image-address',
+}
+
+var {name, price, image} = courseDEV
+console.log(name, price, image)
+
+//cách lấy ra value mà mình chưa định nghĩa: đặt default value (nếu đã định nghĩa thì lấy value đã được đặt còn chưa thì lấu df value)
+var {name, description = 'default value'} = courseDEV
+console.log(description)
 // Rest parameters
+var arr1 = ['312', '314', '313']
+var [a, b, ...rest] = arr1
+console.log(rest)
+
+var courseDEV1 = {
+    name: 'Javascript',
+    price: 1000,
+    image: 'image-address',
+    children: {
+        name: 'ReactJS',
+    }
+}
+var {name: parentName, children: {name: childrenName}} = courseDEV1
+console.log(childrenName)
+console.log(parentName)
+var {name, price, ...rest} = courseDEV1
+console.log(rest)
+
+function DisplayInfo(...params) {
+    console.log(params)
+}
+
+DisplayInfo(1,2,3,4,5,6)
+
 // Spread
 // Enhanced object literals
 
