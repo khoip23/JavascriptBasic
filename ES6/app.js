@@ -167,5 +167,17 @@ ShowCourse(...arrCourse)
 
 
 // Tagged template literal
+function highlight([First, ...strings], ...values)
+{
+    return values.reduce(
+        (acc, currn) => [...acc, `<span>${currn} </span>`, strings.shift()], [First]
+    ).join('')
+}
+
+var brand = 'F1';
+var courseF1 = 'JSB';
+const html = highlight`Học lập trình ${courseF1} tại ${brand} !`;
+console.log(html);
+
 // Modules
 
