@@ -491,6 +491,7 @@ Array.prototype.forEach3 = function(callbackABC) {
 
 
 var CoursesABC = ['JS','PHP','RUBY', 'NODEJS'];
+var CoursesABC1 = ['JS','PHP','RUBY', 'NODEJS'];
 
 CoursesABC.forEach3(function(value, index, array) {
     console.log(value, index, array);
