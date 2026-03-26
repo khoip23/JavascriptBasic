@@ -179,5 +179,13 @@ var courseF1 = 'JSB';
 const html = highlight`Học lập trình ${courseF1} tại ${brand} !`;
 console.log(html);
 
-// Modules
+// Modules: Import / Export
 
+import logger312 from './logger.js';
+import {
+    TYPE_LOG,
+    TYPE_WARN,
+    TYPE_ERROR
+} from './constants.js';
+
+logger312('Test Message...', TYPE_WARN)
