@@ -198,6 +198,15 @@ logger312('Test Message...', TYPE_WARN)
 
 //import tất cả không cần default
 import * as constants from './constants.js'
-console.log(constants
+console.log(constants)
 
-)
+
+// Optional chaining (?.)
+let user = {
+    profile: {
+        name: "Khôi",
+    },
+}
+
+console.log(user?.profile?.name)
+console.log(user?.Address?.city)
