@@ -1,7 +1,7 @@
 //Modules
 import {
     TYPE_LOG
-} from './constants.js';
+} from '../constants.js';
 
 function logger312(log, type = TYPE_LOG)
 {

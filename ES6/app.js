@@ -187,7 +187,7 @@ function highlight1 ([First, ...strings], ...values) {
 
 // Modules: Import / Export
 
-import logger312 from './logger.js';
+import logger312 from './logger/logger.js';
 import {
     TYPE_LOG,
     TYPE_WARN,
@@ -195,3 +195,9 @@ import {
 } from './constants.js';
 
 logger312('Test Message...', TYPE_WARN)
+
+//import tất cả không cần default
+import * as constants from './constants.js'
+console.log(constants
+
+)
