@@ -5,7 +5,7 @@ var users = [
     },
     {
         id: 2,
-        name: 'song dang',
+        name: 'son dang',
     },
     {
         id: 3,
@@ -23,6 +23,11 @@ var comments = [
         id: 2,
         userId: 2,
         content: 'vua ra xong em oi'
+    },
+    {
+        id: 2,
+        userId: 3,
+        content: 'hay quá a ơi'
     }
 ]
 
@@ -59,7 +64,16 @@ getComments()
             })
     })
     .then(function(data) {
-        console.log(data)
+        var commentBlock = document.getElementById('comment-block')
+        var html = ''
+        data.comments.forEach(function(comment) {
+            var user = data.users.find(function(user) {
+                return user.id == comment.userId
+            })
+            html += `<li>${user.name} : ${comment.content}</li>`
+        })
+
+        commentBlock.innerHTML = html;
     })
 
 
