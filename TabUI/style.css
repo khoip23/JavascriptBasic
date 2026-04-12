@@ -35,9 +35,12 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 12px;
 }
 
 .tab {
+  position: relative;
   border: none;
   padding: 12px 16px;
   border-radius: 14px;
@@ -46,6 +49,19 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.tab-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #4f46e5, #818cf8);
+  border-radius: 999px;
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.35);
+  transition: transform 0.25s ease, width 0.25s ease;
+  pointer-events: none;
 }
 
 .tab:hover {
