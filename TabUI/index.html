@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script src="./app.js"></script>
-</body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="tab-ui">
+      <h1 class="tab-ui__title">Frontend Framework Tabs</h1>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="react">
+          React
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="angular">
+          Angular
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="ember">
+          Ember
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="vue">
+          Vue.JS
+        </button>
+      </div>
+
+      <section class="tab-content">
+        <article class="content-panel active" data-content="react" role="tabpanel">
+          React là thư viện xây dựng UI phổ biến của Meta, tập trung vào component, trạng
+          thái và khả năng tái sử dụng. Nó giúp phát triển giao diện nhanh, dễ mở rộng và
+          có hệ sinh thái phong phú với cộng đồng rất lớn.
+        </article>
+        <article class="content-panel" data-content="angular" role="tabpanel">
+          Angular là framework toàn diện của Google, cung cấp sẵn cấu trúc dự án, dependency
+          injection và hệ thống module mạnh mẽ. Phù hợp cho ứng dụng quy mô lớn nhờ quy trình
+          chuẩn hóa và TypeScript mạnh mẽ.
+        </article>
+        <article class="content-panel" data-content="ember" role="tabpanel">
+          Ember hướng đến tính nhất quán và convention over configuration. Framework này có
+          router mạnh, bộ CLI hoàn chỉnh và tập trung vào trải nghiệm dài hạn cho ứng dụng
+          phức tạp với quy ước rõ ràng.
+        </article>
+        <article class="content-panel" data-content="vue" role="tabpanel">
+          Vue.JS là framework nhẹ, dễ tiếp cận, kết hợp ưu điểm của React và Angular. Nó hỗ
+          trợ reactivity đơn giản, tài liệu thân thiện và phù hợp cả dự án nhỏ lẫn ứng dụng
+          lớn nhờ cấu trúc linh hoạt.
+        </article>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
 </html>
